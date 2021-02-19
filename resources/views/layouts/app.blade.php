@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,99 +14,42 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="icon" href="{{asset('icons/favicon.ico')}}" type="image/x-icon">  
+
+    {{-- <script src="{{ asset('js/app.js', true) }}" defer></script>
+    <link href="{{ asset('css/app.css', true) }}" rel="stylesheet">
+    <link rel="icon" href="{{asset('icons/favicon.ico', true)}}" type="image/x-icon">   --}}
 </head>
 <body>
-    <div id="app">
-        <section id="header">
-            <header>
-                <div class="top-header grey-bg">
-                    <div class="container">
-                        <div class="top_header_nav">
-                            <ul class="about">
-                                <li>
-                                    <a href="#">О компании</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('info.delivery')}}">Доставка</a>
-                                </li>
-                                <li>
-                                    <a href="#">Гарантии, обмен и возврат</a>
-                                </li>
-                                <li>
-                                    <a href="#">Оплата</a>
-                                </li>
-                            </ul>
-                            <ul class="account">
-                                <li>
-                                    <img src="{{asset('icons/location.svg')}}" alt="location">                               
-                                    <a href="#">Нур-Султан (Астана)</a>
-                                </li>
-                                @guest
-                                    <li>
-                                        <a href="#" @click.prevent="hiddenAuth = !hiddenAuth">Войти/Регистрация</a>
-                                    </li>
-                                @else
-                                    <li>
-                                        <img src="{{asset('icons/cabinet.svg')}}" alt="cabinet">
-                                        <a href="#">Кабинет</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                      document.getElementById('logout-form').submit();">
-                                         Выйти
-                                     </a>
-                                    </li>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                @endguest
-                            </ul>
-                        </div>
-                    </div>
+  <div id="app">
+      <header>
+          <nav>
+                <div class="menu_nav">
+                    <ul>
+                        <li><a href=""><i class=> <img src="{{asset('icons/logo.svg')}}" alt="logo"></i></a></li>
+                        <li><a href="" class="menu-item">О компании</a></li>
+                        <li><a href="" class="menu-item">Доставка</a></li>
+                        <li><a href="" class="menu-item">Гарантии, обмен и возврат</a></li>
+                        <li><a href="" class="menu-item">Оплата</a></li>
+                        <li><a href="" class="menu-item">Нур-Султан (Астана)</a></li>
+                        <li><a href="" class="menu-item">Войти/Регистрация </a></li>
+                        <li><a href="" class="menu-item">Кабинет</a></li>
+                        <li><a href="" id="search"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" ><i class="fa fa-shopping-basket"></i></a></li>
+                    </ul>
                 </div>
-                <div class="bottom-header">
-                    <div class="container">
-                        <div class="bottom_header_nav" :class="{removeBasket: searchFocused}">
-                            <a href="{{ url('/') }}" class="logo">
-                                <div class="logo_img">
-                                  <img src="{{asset('icons/logo.svg')}}" alt="logo">                     
-                                </div>                      
-                                <div class="logo_title">smart bazar</div>
-                            </a>
-                            <div class="search">
-                                <input 
-                                    type="text" 
-                                    id="search" 
-                                    placeholder="Поиск товаров" 
-                                    v-on:focus="searchFocused = true" 
-                                    v-on:blur="searchFocused = !searchFocused">
-                                <img src="{{asset('icons/search.svg')}}" alt="search">
-                            </div>
-                            @guest
-                            @else
-                                <div v-if="!searchFocused" class="items">
-                                    <a href="{{route('wishlist.index')}}" class="wishlist">
-                                        <div class="circle-badge" v-text="wishlist"></div>
-                                        <img src="{{asset('icons/heart.svg')}}" alt="heart">
-                                    </a>
-                                    <a href="{{route('cart.index')}}" class="basket">
-                                        <div class="circle-badge" v-text="productNominal"></div>
-                                        <img src="{{asset('icons/basket.svg')}}" alt="basket">
-                                    </a>
-                                    <div class="basket_description">
-                                        <span class="basket_count">Всего товаров: <span v-text="productCount"></span> шт</span>
-                                        <span class="basket_price">На сумму: <span v-text="productSum"></span> тг</span>
-                                    </div>
-                                    <div class="hamburger">
-                                        <img src="{{asset('icons/hamburger.svg')}}" alt="hamburger">
-                                    </div>
-                                </div>
-                            @endguest
-                        </div>
-                    </div>
-                </div>
-            </header>
+            </nav>
+          <!--  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+       <script type = "text/javascript">
+    $(document).ready(function(){
+        $('#search').click(function(){
+            $('.menu-item').toggleClass('hide-item')
+            $('.search-form').toggleClass('active')
+        })
+        </script>-->
+        </header>
         </section>
         <section id="menu">
             <div class="menu grey-bg">
@@ -340,7 +284,7 @@
                                     type="text" 
                                     name="phone"
                                     v-mask="'+7 (###) ### ####'" 
-                                    v-model="loginNumber"
+                                    v-model="auth.loginNumber"
                                 >
                                 <label>Телефон</label>
                                 <small v-if="errors.login.phoneRequired" class="text-danger">Введите ваш телефон</small>
@@ -349,7 +293,7 @@
                                 <input 
                                     type="password" 
                                     name="password"
-                                    v-model="loginPassword">
+                                    v-model="auth.loginPassword">
                                 <label>Пароль</label>
                                 <small v-if="errors.login.passwordRequired" class="text-danger">Введите пароль</small>
                             </div>
@@ -369,6 +313,7 @@
                                     name="login"
                                     v-model="auth.registerLogin">
                                 <label>Логин</label>
+                                <small v-if="errors.register.loginRequired" class="text-danger" v-text="errors.register.loginRequired.toString()"></small>
                             </div>
                             <div class="phone">
                                 <input 
@@ -378,6 +323,7 @@
                                     v-model="auth.registerNumber"
                                 >
                                 <label>Телефон</label>
+                                <small v-if="errors.register.phoneRequired" class="text-danger" v-text="errors.register.phoneRequired.toString()"></small>
                             </div>
                             <div class="passwd">
                                 <input 
@@ -387,13 +333,14 @@
                                 >
                                 <label>Пароль</label>
                             </div>
-                            <div class="passwd">
+                            <div class="passwd_confirm">
                                 <input 
                                     type="password" 
                                     name="password_confirmation"
                                     v-model="auth.registerConfirm"
                                 >
                                 <label>Повторите Пароль</label>
+                                <small v-if="errors.register.passwordRequired" class="text-danger" v-text="errors.register.passwordRequired.toString()"></small>
                             </div>
                             <div class="submit">
                                 <button class="dark" type="button" v-on:click="validateRegister">Регистрация</button>

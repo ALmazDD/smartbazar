@@ -1,160 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400');
+
 header{
-    .top-header{
-        .top_header_nav{
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            .about{
-                width: 55%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                padding: 15px 0;
-                margin: 0;
-                li{
-                    list-style: none;
-                    a{
-                        color: #31373B;
-                        font-family: 'Helvetica Neue Medium';
-                        font-size: 16px;
-                        font-weight: normal;
-                    }
-                }
-            }
-            .account{
-                width: 45%;
-                display: flex;
-                flex-direction: row;
-                list-style: none;
-                justify-content: flex-end;
-                align-items: center;
-                margin: 0;
-                padding: 15px 0;
-                li{
-                    margin: 0 25px;
-                    a{
-                        font-family: 'Helvetica Neue Medium';
-                        color: $pink-color;
-                        font-size: 16px;
-                        font-weight: normal;
-                    }
-                    &:last-child{
-                        margin: 0;
-                    }
-                }
-            }
-        }
-    }
-    .bottom-header{
-        // background: rgb(159,52,131);
-        background: linear-gradient(360deg, rgba(210,27,90,1) 0%, rgba(220,34,85,1) 51%, rgba(236,45,77,1) 100%);
-        margin-top: 20px;
-        .removeBasket{
-            display: grid;
-            grid-template-columns: 2fr 5fr!important;
-        }
-        .bottom_header_nav{
-            display: grid;
-            grid-template-columns: 2fr 3fr 2fr;
-            gap: 30px;
-            align-content: center;
-            padding: 15px 0;
-            .logo{
-                color: #fff;
-                text-transform: uppercase;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: flex-start;
-                text-decoration: none;
-                font-family: 'Poppins';
-                .logo_title{
-                    font-size: 1.7rem;
-                    font-weight: bold;
-                    margin-left: 20px;
-                }
-            }
-            .search{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                input{
-                    width: 100%;
-                    border-radius: 25px;
-                    border: none;
-                    padding: 10px;
-                }
-                img{
-                    position: absolute;
-                    right: 5%;
-                }
-            }
-            .signin{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                flex-wrap: wrap;
-                a{
-                    font-family: "Helvetica Neue Medium";
-                    color: #fff;
-                    font-size: 18px;
-                    font-weight: normal;
-                    text-decoration: none;
-                }
-            }
-            .items{
-                color: #fff;
-                display: grid;
-                grid-template-columns: 1fr 1fr 4fr;
-                align-content: center;
-                .wishlist, .basket{
-                    position: relative;
-                    width: 30px;
-                    height: 30px;
-                    align-self: center;
-                    justify-self: end;
-                    .circle-badge{
-                        position: absolute;
-                        bottom: 70%;
-                        right: 70%;
-                        height: 25px;
-                        width: 25px;
-                        background-color: #fff335;
-                        border-radius: 50%;
-                        display: inline-block;
-                        color: #000;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    img{
-                        width: 100%;
-                    }
-                }
-                .basket_description{
-                    font-family: 'Helvetica Neue';
-                    display: flex;
-                    flex-direction: column;
-                    font-size: 16px;
-                    // font-weight: bold;
-                    align-items: flex-start;
-                    justify-content: center;
-                    margin-left: 30px;
-                }
-                .hamburger{
-                    display: none;
-                    img{
-                        width: 100%;
-                    }
-                }
-            }
-        }
-    }
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro',sans-serif;
 }
+nav{
+    height: 60px;
+    background:red;
+
+}
+.menu_nav{
+    position: relative;
+    margin: 0 auto;
+    width: 1000px;
+    overflow: hidden;
+}
+.menu_nav ul{
+    width: 100%;
+    margin: 0;
+    padding-right: 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+.menu_nav ul li{
+    list-style: none;
+}
+.menu_nav ul li, .menu_nav ul li a{
+    color:#fff;
+    line-height: 44px;
+    text-decoration: none;
+}
+.menu_nav ul li img {
+    width: 50px;
+   
+}
+.menu_nav ul li a.menu-item{
+    transform: scale(1);
+    transition: 0.5s;
+    display: block;
+}
+.menu_nav ul li a.menu-item.hide-item{
+    transform: scale(0);
+
+}
+
+.menu_nav ul li:nth-child(2) a.menu-item.hide-item
+{
+    transition-delay: 0.6s;
+}
+.menu_nav ul li:nth-child(3) a.menu-item.hide-item
+{
+    transition-delay: 0.6s;
+}.menu_nav ul li:nth-child(4) a.menu-item.hide-item
+{
+    transition-delay: 0.6s;
+}.menu_nav ul li:nth-child(5) a.menu-item.hide-item
+{
+    transition-delay: 0.6s;
+}.menu_nav ul li:nth-child(6) a.menu-item.hide-item
+{
+    transition-delay: 0.6s;
+}.menu_nav ul li:nth-child(7) a.menu-item.hide-item
+{
+    transition-delay: 0.6s;
+}
+
+
+
 
 .menu{
     margin-top: 10px;
