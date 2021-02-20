@@ -21,36 +21,66 @@
 </head>
 <body>
   <div id="app">
-      <header>
-          <nav>
-                <div class="menu_nav">
-                    <ul>
-                        <li><a href=""><i class=> <img src="{{asset('icons/logo.svg')}}" alt="logo"></i></a></li>
-                        <li><a href="" class="menu-item">О компании</a></li>
-                        <li><a href="" class="menu-item">Доставка</a></li>
-                        <li><a href="" class="menu-item">Гарантии, обмен и возврат</a></li>
-                        <li><a href="" class="menu-item">Оплата</a></li>
-                        <li><a href="" class="menu-item">Нур-Султан (Астана)</a></li>
-                        <li><a href="" class="menu-item">Войти/Регистрация </a></li>
-                        <li><a href="" class="menu-item">Кабинет</a></li>
-                        <li><a href="" id="search"><i class="fa fa-search"></i></a></li>
-                        <li><a href="" ><i class="fa fa-shopping-basket"></i></a></li>
-                    </ul>
-                </div>
-            </nav>
-          <!--  <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-       <script type = "text/javascript">
-    $(document).ready(function(){
-        $('#search').click(function(){
-            $('.menu-item').toggleClass('hide-item')
-            $('.search-form').toggleClass('active')
-        })
-        </script>-->
-        </header>
-        </section>
+     <header>
+         <div class="container_nav">
+             <nav class="menu_nav">
+<ul class="nav-list nav-list-mobile">
+    <li class="nav-item">
+       <div class="mobile-menu">
+         <span class="line line-top"></span>
+         <span class="line line-bottom"></span>       
+    </div> 
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link nav-link-smartb"></a>
+    </li>
+    <li class="nav-item nav-item-hidden">
+        <a href="#" class="nav-link nav-link-cart"></a>
+    </li>
+</ul>
+<!--work under-->
+<ul class="nav-list nav-list-larger">
+    <li class="nav-item nav-item-hidden">
+        <a href="#" class="nav-link nav-link-smartb"></a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link nav-link"></a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link nav-link">Кабинет</a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link nav-link">О компании</a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link nav-link">Доставка</a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link nav-link">Гарантии, обмен и возврат</a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link nav-link">Оплата</a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link nav-link">Нур-султан</a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link nav-link-search"></a>
+    </li><li class="nav-item">
+        <a href="" class="nav-link nav-link-cart"></a>
+    </li>
+</ul>
+<!--larger-->
+             </nav>
+         </div>
+         <script>
+            const selectElement=(element) => document.querySelector(element);
+            selectElement('.mobile-menu').addEventListener('click',()=>{
+                selectElement('header').classList.toggle('active');
+            })
+            </script>
+     </header>
+        
         <section id="menu">
             <div class="menu grey-bg">
                 <div class="container">
